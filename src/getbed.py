@@ -53,13 +53,17 @@ def main(argv):
         current_filter = len(record.FILTER)
         current_alt = ','.join(str(v) for v in record.ALT)
 
+
         # SnpEff
         ann = record.INFO['ANN'][0].split('|')
         annotation = ann[1]
         current_gene = ann[3]
         # Condel
-        current_condel = getTabixValCondel(condel_tbx, current_chr, current_pos, current_ref, current_alt)
-
+        condels = []
+        for v in record.ALT:
+            #print str(current_chr) + "\t" + str(current_pos) + "\t" + str(current_ref) + "\t" + str(v)
+            condels.append(str(getTabixValCondel(condel_tbx, current_chr, current_pos, current_ref, v)))
+        current_condel = ','.join(str(p) for p in condels)
         current_af = ','.join(str(v) for v in record.INFO['AF'])
         ac_adj = ','.join(str(v) for v in record.INFO['AC_Adj'])
         an_adj = record.INFO['AN_Adj']
