@@ -24,6 +24,13 @@ import pysam
 #    def __init__(self, msg):
 #        self.msg = msg
 
+def getExAC(record, ac_eth, an_eth, index):
+    #ac = ','.join(str(v) for v in record.INFO[eth])
+    ac = record.INFO[ac_eth][index]
+    an = record.INFO[an_eth]
+    af = round((float(ac*1.0)/float(an*1.0)),7)
+    return str(ac), str(an), str(af)
+
 def getTabixVal(input_tbx, current_chr, current_pos, current_ref, current_alt):
     #current_chr = current_chr.translate(None, 'chr')
     data = input_tbx.fetch(current_chr, current_pos-1, current_pos)
@@ -47,7 +54,7 @@ def getTabixValCondel(input_tbx, current_chr, current_pos, current_ref, current_
             if( current_ref == row_info[3] and current_alt == row_info[4] ):
                 value = row_info[7]
                 break
-    return value
+    return round(float(value), 4)
 
 def getfathmm(fathmm_tbx, current_chr, current_pos, current_ref, current_alt):
     #current_chr = current_chr.translate(None, 'chr')
