@@ -87,7 +87,7 @@ def main(argv):
                 # current_condel = ','.join(str(p) for p in condels)
                 # current_af = ','.join(str(v) for v in record.INFO['AF'])
 
-                if all(x in ['frameshift_variant', 'start_lost', 'stop_gained'] for x in [annotation]):
+                if any(x in ['frameshift_variant', 'start_lost', 'stop_gained'] for x in annotation.split('&')):
                     current_condel = 1.000
                 else:
                     current_condel = getTabixValCondel(condel_tbx, current_chr, current_pos, current_ref, v)
@@ -105,8 +105,8 @@ def main(argv):
 
                 alt_index = alt_index + 1
 
-                out_combined_str = [ current_chr, str(current_pos-1), str(current_pos), current_ref, str(v), annotation,\
-                        current_gene, str(current_condel), af_adj, af_nfe, af_fin, af_afr, af_eas, af_sas, af_amr, af_oth ]
+                out_combined_str = [ current_chr, str(current_pos-1), str(current_pos), current_ref, str(v), current_gene,\
+                        annotation, str(current_condel), af_adj, af_nfe, af_fin, af_afr, af_eas, af_sas, af_amr, af_oth ]
                 out_all = [ current_chr, str(current_pos-1), str(current_pos), current_ref, str(v), annotation,\
                         current_gene, ac_adj , an_adj, str(current_condel) ]
                 out_nfe = [ current_chr, str(current_pos-1), str(current_pos), current_ref, str(v), annotation,\

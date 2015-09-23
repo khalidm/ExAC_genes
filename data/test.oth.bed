@@ -564,8 +564,8 @@ chr21	10910283	10910284	G	C	intron_variant	TPTE	0	10358	0.0001
 chr21	10910301	10910302	C	G	splice_region_variant&intron_variant	TPTE	0	10398	0.0001
 chr21	10910306	10910307	C	T	splice_region_variant&synonymous_variant	TPTE	58	10396	0.0001
 chr21	10910306	10910307	C	A	splice_region_variant&synonymous_variant	TPTE	3	10396	0.0001
-chr21	10910307	10910308	G	A	stop_gained&splice_region_variant	TPTE	2	10398	0.6104
-chr21	10910307	10910308	G	T	stop_gained&splice_region_variant	TPTE	0	10398	0.0001
+chr21	10910307	10910308	G	A	stop_gained&splice_region_variant	TPTE	2	10398	1.0
+chr21	10910307	10910308	G	T	stop_gained&splice_region_variant	TPTE	0	10398	1.0
 chr21	10910311	10910312	A	G	missense_variant	TPTE	0	10404	0.4016
 chr21	10910321	10910322	C	T	synonymous_variant	TPTE	0	10404	0.0001
 chr21	10910321	10910322	C	A	synonymous_variant	TPTE	0	10404	0.0001
@@ -1235,9 +1235,9 @@ chr21	10942713	10942714	T	A	missense_variant	TPTE	0	10406	0.4769
 chr21	10942716	10942717	C	A	missense_variant	TPTE	0	10406	0.6127
 chr21	10942716	10942717	C	T	missense_variant	TPTE	28	10406	0.5566
 chr21	10942716	10942717	C	G	missense_variant	TPTE	0	10406	0.6113
-chr21	10942717	10942718	G	C	frameshift_variant&stop_gained	TPTE	0	10406	0.0001
-chr21	10942717	10942718	G	A	frameshift_variant&stop_gained	TPTE	1	10406	0.0001
-chr21	10942717	10942718	G	GT	frameshift_variant&stop_gained	TPTE	0	10406	0.0001
+chr21	10942717	10942718	G	C	frameshift_variant&stop_gained	TPTE	0	10406	1.0
+chr21	10942717	10942718	G	A	frameshift_variant&stop_gained	TPTE	1	10406	1.0
+chr21	10942717	10942718	G	GT	frameshift_variant&stop_gained	TPTE	0	10406	1.0
 chr21	10942726	10942727	G	A	synonymous_variant	TPTE	1	10406	0.0001
 chr21	10942728	10942729	C	G	missense_variant	TPTE	0	10406	0.6304
 chr21	10942730	10942731	A	G	missense_variant	TPTE	0	10406	0.6293
