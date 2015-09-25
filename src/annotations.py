@@ -29,7 +29,8 @@ def getExAC(record, ac_eth, an_eth, index):
     ac = record.INFO[ac_eth][index]
     an = record.INFO[an_eth]
     af = round((float(ac*1.0)/float(an*1.0)),7)
-    return str(ac), str(an), str(af)
+    samples = an/2
+    return str(ac), str(an), str(af), str(samples)
 
 def getTabixVal(input_tbx, current_chr, current_pos, current_ref, current_alt):
     #current_chr = current_chr.translate(None, 'chr')

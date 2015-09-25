@@ -94,35 +94,35 @@ def main(argv):
 
                 # print current_chr + "\t" + str(current_pos) + " fileter = " + str(current_filter)
 
-                ac_adj, an_adj, af_adj = getExAC(record, "AC_Adj", "AN_Adj", alt_index)
-                ac_nfe, an_nfe, af_nfe = getExAC(record, "AC_NFE", "AN_NFE", alt_index)
-                ac_fin, an_fin, af_fin = getExAC(record, "AC_FIN", "AN_FIN", alt_index)
-                ac_afr, an_afr, af_afr = getExAC(record, "AC_AFR", "AN_AFR", alt_index)
-                ac_eas, an_eas, af_eas = getExAC(record, "AC_EAS", "AN_EAS", alt_index)
-                ac_sas, an_sas, af_sas = getExAC(record, "AC_SAS", "AN_SAS", alt_index)
-                ac_amr, an_amr, af_amr = getExAC(record, "AC_AMR", "AN_AMR", alt_index)
-                ac_oth, an_oth, af_oth = getExAC(record, "AC_OTH", "AN_OTH", alt_index)
+                ac_adj, an_adj, af_adj, all_samples = getExAC(record, "AC_Adj", "AN_Adj", alt_index)
+                ac_nfe, an_nfe, af_nfe, nfe_samples = getExAC(record, "AC_NFE", "AN_NFE", alt_index)
+                ac_fin, an_fin, af_fin, fin_samples = getExAC(record, "AC_FIN", "AN_FIN", alt_index)
+                ac_afr, an_afr, af_afr, afr_samples = getExAC(record, "AC_AFR", "AN_AFR", alt_index)
+                ac_eas, an_eas, af_eas, eas_samples = getExAC(record, "AC_EAS", "AN_EAS", alt_index)
+                ac_sas, an_sas, af_sas, sas_samples = getExAC(record, "AC_SAS", "AN_SAS", alt_index)
+                ac_amr, an_amr, af_amr, amr_samples = getExAC(record, "AC_AMR", "AN_AMR", alt_index)
+                ac_oth, an_oth, af_oth, oth_samples = getExAC(record, "AC_OTH", "AN_OTH", alt_index)
 
                 alt_index = alt_index + 1
 
                 out_combined_str = [ current_chr, str(current_pos-1), str(current_pos), current_ref, str(v), current_gene,\
                         annotation, str(current_condel), af_adj, af_nfe, af_fin, af_afr, af_eas, af_sas, af_amr, af_oth ]
                 out_all = [ current_chr, str(current_pos-1), str(current_pos), current_ref, str(v), annotation,\
-                        current_gene, ac_adj , an_adj, str(current_condel) ]
+                        current_gene, ac_adj , an_adj, af_adj, all_samples, str(current_condel) ]
                 out_nfe = [ current_chr, str(current_pos-1), str(current_pos), current_ref, str(v), annotation,\
-                        current_gene, ac_nfe , an_nfe, str(current_condel) ]
+                        current_gene, ac_nfe , an_nfe, af_nfe, nfe_samples, str(current_condel) ]
                 out_fin = [ current_chr, str(current_pos-1), str(current_pos), current_ref, str(v), annotation,\
-                        current_gene, ac_fin, an_fin, str(current_condel) ]
+                        current_gene, ac_fin, an_fin, af_fin, fin_samples, str(current_condel) ]
                 out_afr = [ current_chr, str(current_pos-1), str(current_pos), current_ref, str(v), annotation,\
-                        current_gene, ac_afr , an_afr, str(current_condel) ]
+                        current_gene, ac_afr , an_afr, af_afr, afr_samples, str(current_condel) ]
                 out_eas = [ current_chr, str(current_pos-1), str(current_pos), current_ref, str(v), annotation,\
-                        current_gene, ac_eas , an_eas, str(current_condel) ]
+                        current_gene, ac_eas , an_eas, af_eas, eas_samples, str(current_condel) ]
                 out_sas = [ current_chr, str(current_pos-1), str(current_pos), current_ref, str(v), annotation,\
-                        current_gene, ac_sas , an_sas, str(current_condel) ]
+                        current_gene, ac_sas , an_sas, af_sas, sas_samples, str(current_condel) ]
                 out_amr = [ current_chr, str(current_pos-1), str(current_pos), current_ref, str(v), annotation,\
-                        current_gene, ac_amr , an_amr, str(current_condel) ]
+                        current_gene, ac_amr , an_amr, af_amr, amr_samples, str(current_condel) ]
                 out_oth = [ current_chr, str(current_pos-1), str(current_pos), current_ref, str(v), annotation,\
-                        current_gene, ac_oth, an_oth, str(current_condel) ]
+                        current_gene, ac_oth, an_oth, af_oth, oth_samples, str(current_condel) ]
 
                 out_combined_str = [x or '.' for x in out_combined_str]
                 out_all = [x or '.' for x in out_all]
