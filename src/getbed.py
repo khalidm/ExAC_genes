@@ -58,7 +58,7 @@ def main(argv):
 
     condel_tbx = pysam.TabixFile("data/fannsdb.small.bed.gz")
 
-    header_str = "#CHR\tSTART\tEND\tREF\tALT\tVTYPE\tANNOTATION\tGENE\tAC\tAN\tAF\tSAMPLES\tCONDEL\n"
+    header_str = "#CHR\tSTART\tEND\tREF\tALT\tANNOTATION\tGENE\tAC\tAN\tAF\tSAMPLES\tCONDEL\n"
 
     outputfile_all.write(header_str),outputfile_nfe.write(header_str)
     outputfile_fin.write(header_str),outputfile_afr.write(header_str)
