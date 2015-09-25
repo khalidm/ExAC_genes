@@ -28,7 +28,10 @@ def getExAC(record, ac_eth, an_eth, index):
     #ac = ','.join(str(v) for v in record.INFO[eth])
     ac = record.INFO[ac_eth][index]
     an = record.INFO[an_eth]
-    af = round((float(ac*1.0)/float(an*1.0)),7)
+    if ac>0:
+        af = round((float(ac*1.0)/float(an*1.0)),7)
+    else:
+        af = 0.0
     samples = an/2
     return str(ac), str(an), str(af), str(samples)
 
