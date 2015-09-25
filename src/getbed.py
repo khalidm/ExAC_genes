@@ -77,6 +77,14 @@ def main(argv):
         condels = []
         alt_index = 0
 
+        header_str = "#CHR\tSTART\tEND\tREF\tALT\tVTYPE\tANNOTATION\tGENE\tAC\tAN\tAF\tSAMPLES\tCONDEL\n"
+
+        outputfile_all.write("\t".join(header_str)),outputfile_nfe.write("\t".join(header_str))
+        outputfile_fin.write("\t".join(header_str)),outputfile_afr.write("\t".join(header_str))
+        outputfile_eas.write("\t".join(header_str)),outputfile_sas.write("\t".join(header_str))
+        outputfile_amr.write("\t".join(header_str)),outputfile_oth.write("\t".join(header_str))
+
+
         if current_filter == 0:
 
             # Iteratre though each ALT allele
