@@ -60,10 +60,10 @@ def main(argv):
 
     header_str = "#CHR\tSTART\tEND\tREF\tALT\tVTYPE\tANNOTATION\tGENE\tAC\tAN\tAF\tSAMPLES\tCONDEL\n"
 
-    outputfile_all.write("\t".join(header_str)),outputfile_nfe.write("\t".join(header_str))
-    outputfile_fin.write("\t".join(header_str)),outputfile_afr.write("\t".join(header_str))
-    outputfile_eas.write("\t".join(header_str)),outputfile_sas.write("\t".join(header_str))
-    outputfile_amr.write("\t".join(header_str)),outputfile_oth.write("\t".join(header_str))
+    outputfile_all.write(header_str),outputfile_nfe.write(header_str)
+    outputfile_fin.write(header_str),outputfile_afr.write(header_str)
+    outputfile_eas.write(header_str),outputfile_sas.write(header_str)
+    outputfile_amr.write(header_str),outputfile_oth.write(header_str)
 
     vcf_reader = vcf.Reader(open(args.vcf, 'r'))
     for record in vcf_reader:
