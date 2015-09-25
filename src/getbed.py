@@ -58,6 +58,13 @@ def main(argv):
 
     condel_tbx = pysam.TabixFile("data/fannsdb.small.bed.gz")
 
+    header_str = "#CHR\tSTART\tEND\tREF\tALT\tVTYPE\tANNOTATION\tGENE\tAC\tAN\tAF\tSAMPLES\tCONDEL\n"
+
+    outputfile_all.write("\t".join(header_str)),outputfile_nfe.write("\t".join(header_str))
+    outputfile_fin.write("\t".join(header_str)),outputfile_afr.write("\t".join(header_str))
+    outputfile_eas.write("\t".join(header_str)),outputfile_sas.write("\t".join(header_str))
+    outputfile_amr.write("\t".join(header_str)),outputfile_oth.write("\t".join(header_str))
+
     vcf_reader = vcf.Reader(open(args.vcf, 'r'))
     for record in vcf_reader:
         current_chr = "chr" + record.CHROM
@@ -76,14 +83,6 @@ def main(argv):
         # Condel
         condels = []
         alt_index = 0
-
-        header_str = "#CHR\tSTART\tEND\tREF\tALT\tVTYPE\tANNOTATION\tGENE\tAC\tAN\tAF\tSAMPLES\tCONDEL\n"
-
-        outputfile_all.write("\t".join(header_str)),outputfile_nfe.write("\t".join(header_str))
-        outputfile_fin.write("\t".join(header_str)),outputfile_afr.write("\t".join(header_str))
-        outputfile_eas.write("\t".join(header_str)),outputfile_sas.write("\t".join(header_str))
-        outputfile_amr.write("\t".join(header_str)),outputfile_oth.write("\t".join(header_str))
-
 
         if current_filter == 0:
 
