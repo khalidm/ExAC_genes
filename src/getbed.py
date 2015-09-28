@@ -117,23 +117,23 @@ def main(argv):
 
                 alt_index = alt_index + 1
 
-                out_combined_str = [ current_chr, str(current_pos-1), str(current_pos), current_ref, str(v), current_gene,\
+                out_combined_str = [ current_chr, str(current_pos-0), str(current_pos), current_ref, str(v), current_gene,\
                         annotation, str(current_condel), af_adj, af_nfe, af_fin, af_afr, af_eas, af_sas, af_amr, af_oth ]
-                out_all = [ current_chr, str(current_pos-1), str(current_pos), current_ref, str(v), annotation,\
+                out_all = [ current_chr, str(current_pos-0), str(current_pos), current_ref, str(v), annotation,\
                         current_gene, ac_adj , an_adj, af_adj, all_samples, str(current_condel) ]
-                out_nfe = [ current_chr, str(current_pos-1), str(current_pos), current_ref, str(v), annotation,\
+                out_nfe = [ current_chr, str(current_pos-0), str(current_pos), current_ref, str(v), annotation,\
                         current_gene, ac_nfe , an_nfe, af_nfe, nfe_samples, str(current_condel) ]
-                out_fin = [ current_chr, str(current_pos-1), str(current_pos), current_ref, str(v), annotation,\
+                out_fin = [ current_chr, str(current_pos-0), str(current_pos), current_ref, str(v), annotation,\
                         current_gene, ac_fin, an_fin, af_fin, fin_samples, str(current_condel) ]
-                out_afr = [ current_chr, str(current_pos-1), str(current_pos), current_ref, str(v), annotation,\
+                out_afr = [ current_chr, str(current_pos-0), str(current_pos), current_ref, str(v), annotation,\
                         current_gene, ac_afr , an_afr, af_afr, afr_samples, str(current_condel) ]
-                out_eas = [ current_chr, str(current_pos-1), str(current_pos), current_ref, str(v), annotation,\
+                out_eas = [ current_chr, str(current_pos-0), str(current_pos), current_ref, str(v), annotation,\
                         current_gene, ac_eas , an_eas, af_eas, eas_samples, str(current_condel) ]
-                out_sas = [ current_chr, str(current_pos-1), str(current_pos), current_ref, str(v), annotation,\
+                out_sas = [ current_chr, str(current_pos-0), str(current_pos), current_ref, str(v), annotation,\
                         current_gene, ac_sas , an_sas, af_sas, sas_samples, str(current_condel) ]
-                out_amr = [ current_chr, str(current_pos-1), str(current_pos), current_ref, str(v), annotation,\
+                out_amr = [ current_chr, str(current_pos-0), str(current_pos), current_ref, str(v), annotation,\
                         current_gene, ac_amr , an_amr, af_amr, amr_samples, str(current_condel) ]
-                out_oth = [ current_chr, str(current_pos-1), str(current_pos), current_ref, str(v), annotation,\
+                out_oth = [ current_chr, str(current_pos-0), str(current_pos), current_ref, str(v), annotation,\
                         current_gene, ac_oth, an_oth, af_oth, oth_samples, str(current_condel) ]
 
                 out_combined_str = [x or '.' for x in out_combined_str]
