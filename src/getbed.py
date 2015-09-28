@@ -77,9 +77,10 @@ def main(argv):
 
 
         # SnpEff
-        ann = record.INFO['ANN'][0].split('|')
-        annotation = ann[1]
-        current_gene = ann[3]
+        ann = record.INFO['ANN'][0].split(',')
+        #ann = record.INFO['ANN'][0].split('|')
+        #annotation = ann[1]
+        #current_gene = ann[3]
         # Condel
         condels = []
         alt_index = 0
@@ -88,6 +89,10 @@ def main(argv):
 
             # Iteratre though each ALT allele
             for v in record.ALT:
+                ann_temp = ann[alt_index].split('|')
+                annotation = ann_temp[1]
+                current_gene = ann_temp[3]
+
                 #print str(current_chr) + "\t" + str(current_pos) + "\t" + str(current_ref) + "\t" + str(v)
                 #condels.append(str(getTabixValCondel(condel_tbx, current_chr, current_pos, current_ref, v)))
 
