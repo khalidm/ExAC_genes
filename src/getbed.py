@@ -89,9 +89,18 @@ def main(argv):
 
             # Iteratre though each ALT allele
             for v in record.ALT:
-                ann_temp = record.INFO['ANN'][alt_index].split('|')
-                annotation = ann_temp[1]
-                current_gene = ann_temp[3]
+                if len(record.INFO['ANN']) < len(record.ALT):
+                    ann_temp = record.INFO['ANN'][0].split('|')
+                    annotation = ann_temp[1]
+                    current_gene = ann_temp[3]
+                else:
+                    ann_temp = record.INFO['ANN'][alt_index].split('|')
+                    if v==ann_temp[0]:
+                        annotation = ann_temp[1]
+                        current_gene = ann_temp[3]
+                    else:
+                        annotation = ann_temp[1]
+                        current_gene = ann_temp[3]
 
                 #print str(current_chr) + "\t" + str(current_pos) + "\t" + str(current_ref) + "\t" + str(v)
                 #condels.append(str(getTabixValCondel(condel_tbx, current_chr, current_pos, current_ref, v)))
