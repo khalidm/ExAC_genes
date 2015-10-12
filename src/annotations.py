@@ -24,6 +24,33 @@ import pysam
 #    def __init__(self, msg):
 #        self.msg = msg
 
+def getcadd(cadd_tbx, current_chr, current_pos, current_ref, current_alt):
+    current_chr = current_chr.translate(None, 'chr')
+    data = cadd_tbx.fetch(current_chr, current_pos-1, current_pos)
+    cadd_phred, cadd_priPhCons, cadd_GerpRS = '','',''
+    cadd_polysift, cadd_test1, cadd_test2 = '','',''
+
+    if data is not None:
+        for row in data:
+            row_info = row.split("\t")
+            cadd_ref = row_info[2]
+            cadd_alt = row_info[4]
+            if(cadd_ref == current_ref and cadd_alt == current_alt):
+                cadd_phred = row_info[115]
+                cadd_priPhCons = row_info[18]
+                cadd_GerpRS = row_info[26]
+                #cadd_annotation = row_info[]
+                if "damaging" in row_info[110] or "deleterious" in row_info[112]:
+                    cadd_polysift = "del"
+                break
+    else:
+        cadd_phred = 'NA'
+
+    return cadd_annotation
+    #return cadd_phred, cadd_priPhCons, cadd_GerpRS, \
+    #        cadd_polysift
+
+
 def getExAC(record, ac_eth, an_eth, index):
     #ac = ','.join(str(v) for v in record.INFO[eth])
     ac = record.INFO[ac_eth][index]

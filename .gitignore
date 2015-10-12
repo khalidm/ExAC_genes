@@ -3,3 +3,13 @@ fannsdb.small.bed.gz.tbi
 test.all.bed
 test.nfe.bed
 o
+allele.missense.proportion
+allele.proportion
+exac
+var.stop.proportion
+allele.stop.proportion
+exac.proportions2.txt
+ign
+ign.proportions2.txt
+var.missense.proportion
+var.proportion
