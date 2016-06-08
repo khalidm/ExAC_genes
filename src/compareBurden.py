@@ -56,7 +56,7 @@ def main(argv):
         row_info = row.split("\t")
         gene = str(row_info[0])
         count1 = int(row_info[1])
-        number1 = int(row_info[2)
+        number1 = int(row_info[2])
         proportion = float(count1)/float(number1)
         #insert proportion
         #pop1[gene] = round(proportion, 5), number
