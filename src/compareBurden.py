@@ -45,8 +45,7 @@ def main(argv):
     print header_str
 
     reader1 = open(args.file1, 'r')
-    reader2 = open(args.file2, 'r')
-    next(reader1),next(reader2)
+    next(reader1)
 
     pop1 = {}
     pop2 = {}
@@ -55,13 +54,13 @@ def main(argv):
         row = row.rstrip('\n')
         row_info = row.split("\t")
         gene = str(row_info[0])
-        count1 = int(row_info[1])
-        number1 = int(row_info[2])
+        count1 = float(row_info[1])
+        number1 = float(row_info[2])
         proportion = float(count1)/float(number1)
         #insert proportion
         #pop1[gene] = round(proportion, 5), number
-        count2 = int(row_info[3])
-        number2 = int(row_info[4])        
+        count2 = float(row_info[3])
+        number2 = float(row_info[4])        
         pop1[gene] = count1, number1
         pop2[gene] = count2, number2
 
@@ -107,7 +106,6 @@ def main(argv):
 
 
     reader1.close()
-    reader2.close()
 
 
 if __name__ == "__main__":
